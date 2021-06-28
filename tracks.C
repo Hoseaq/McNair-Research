@@ -57,13 +57,20 @@ void tracks()
 
   //creation of single histogram
 
+<<<<<<< HEAD
   THStack *hs = new THStack("hs", "Superimposed histograms");
+=======
+  THStack *hs = new THStack("hs","");
+>>>>>>> 1fac18893f7e6b0b02653651d73daf1ab32de5f0
   hs -> Add(c24ax);
   hs -> Add(c24bx);
   hs -> Add(c24x);
   hs -> Draw();
-  hs ->GetXaxis()->SetTitle("N_{tracks}{FVTX}");
-  hs ->GetYaxis()->SetTitle("c_{2}{4}");
+  hs -> GetXaxis()->SetTitle("N_{tracks}^{FVTX}");
+  hs -> GetYaxis()->SetTitle("c_{2}{4}");
+  hs->SetMaximum(1.0e-4);
+  hs->SetMinimum(-1.0e-4);
+  hs->GetXaxis()->SetRangeUser(0,50);
   c1.Print("hs.png");
 
   return;
