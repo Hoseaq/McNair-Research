@@ -18,7 +18,7 @@ void tracks()
   //TH1D histograms contain 1 double per bin
   //TH1D* creates a pointer to a histogram
   TH1D* c22x = c22->ProjectionX("c22x");
-  TH1D* c24x = c24->ProjectionX("c24X");
+  TH1D* c24x = c24->ProjectionX("c24x");
   c22x -> Multiply(c22x);
   c22x -> Scale(2);
   c24x -> Add(c22x,-1);
@@ -77,7 +77,24 @@ void tracks()
   int rebin = 2;
   c22x -> Rebin(rebin);
   c22x -> Scale(1.0/rebin);
-  
+  c24x -> Rebin(rebin);
+  c24x -> Scale(1.0/rebin);
+  c22x -> Multiply(c22x);
+  c22x -> Scale(2);
+  c24x -> Add(c22x,-1);
+  c24x -> Draw();
+  c1.Print("c24rb1.png");
+
+  //Rebinned seperate  c2{4} histogram
+
+  //Rebinning of histograms: merged
+  c22x -> Multiply(c22x);
+  c22x -> Scale(2);
+  c24x -> Add(c22x,-1);
+  c24x -> Rebin(rebin);
+  c24x -> Scale(1.0/rebin);
+  c24x -> Draw();
+  c1.Print("c24rb2.png");
   
 
   return;
