@@ -58,13 +58,9 @@ void tracks()
   //creation of single histogram
 
   THStack *hs = new THStack("hs", "Superimposed histograms");
-  // hs -> GetXaxis()->SetTitle("N_{tracks}^{FVTX}");
-  //hs -> GetYaxis()->SetTitle("c_{2}{4}");
   hs -> Add(c24ax);
   hs -> Add(c24bx);
   hs -> Add(c24x);
-  //  hs -> GetXaxis()->SetTitle("N_{tracks}^{FVTX}");
-  //  hs -> GetYaxis()->SetTitle("c_{2}{4}");
   hs -> Draw();
   hs ->GetXaxis()->SetTitle("N_{tracks}{FVTX}");
   hs ->GetYaxis()->SetTitle("c_{2}{4}");
