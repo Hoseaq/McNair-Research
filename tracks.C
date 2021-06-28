@@ -57,11 +57,10 @@ void tracks()
 
   //creation of single histogram
 
-<<<<<<< HEAD
+
   THStack *hs = new THStack("hs", "Superimposed histograms");
-=======
-  THStack *hs = new THStack("hs","");
->>>>>>> 1fac18893f7e6b0b02653651d73daf1ab32de5f0
+
+  //  THStack *hs = new THStack("hs","");
   hs -> Add(c24ax);
   hs -> Add(c24bx);
   hs -> Add(c24x);
@@ -72,6 +71,14 @@ void tracks()
   hs->SetMinimum(-1.0e-4);
   hs->GetXaxis()->SetRangeUser(0,50);
   c1.Print("hs.png");
+
+  //Rebinning of historgrams: seperate rebinning of <4> and <2> histograms
+
+  int rebin = 2;
+  c22x -> Rebin(rebin);
+  c22x -> Scale(1.0/rebin);
+  
+  
 
   return;
 }
