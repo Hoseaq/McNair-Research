@@ -125,6 +125,17 @@ void tracks()
   c24x_rb2 -> Draw("same ex0p");
   c1.Print("Figures/c24_rebin_comparison.png");
 
+  // --- think like a physicist: take the ratio
+  c24x_rb2->Divide(c24x_rb1);
+  c24x_rb2->Draw();
+  c24x_rb2->SetMaximum(2);
+  c24x_rb2->SetMinimum(0);
+  TLine line1(0,1,90,1);
+  line1.Draw();
+  c1.Print("Figures/c24_rebin_comparison_ratio.png");
+  c24x_rb2->SetMaximum(1.1);
+  c24x_rb2->SetMinimum(0.9);
+  c1.Print("Figures/c24_rebin_comparison_ratio_zoom.png");
 
   return;
 
