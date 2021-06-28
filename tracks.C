@@ -42,7 +42,7 @@ void tracks()
   c22x -> Scale(2);
   c24x -> Add(c22x,-1);
   c24x -> Draw();
-  c1.Print("c24x.png");
+  c1.Print("Figures/c24x.png");
   //c2{4} histogram is now drawn
 
 
@@ -53,7 +53,7 @@ void tracks()
   c22ax -> Add(c22abx, -1);
   c24bx -> Add(c22ax, -1);
   c24bx -> Draw();
-  c1.Print("c24bx.png");
+  c1.Print("Figures/c24bx.png");
   //cn{4}ab|ab has been drawn
 
 
@@ -63,7 +63,7 @@ void tracks()
   c22abx -> Scale(2);
   c24ax -> Add(c22abx, -1);
   c24ax -> Draw();
-  c1.Print("c24ax.png");
+  c1.Print("Figures/c24ax.png");
   //cn{4}aa|bb histogram has been drawn
 
   //creation of single histogram
@@ -79,7 +79,7 @@ void tracks()
   hs->SetMaximum(1.0e-4);
   hs->SetMinimum(-1.0e-4);
   hs->GetXaxis()->SetRangeUser(0,50);
-  c1.Print("hs.png");
+  c1.Print("Figures/hs.png");
 
   //Rebinning of historgrams: seperate rebinning of <4> and <2> histograms
 
@@ -93,7 +93,7 @@ void tracks()
   c22x_rb1 -> Scale(2);
   c24x_rb1 -> Add(c22x_rb1,-1);
   c24x_rb1 -> Draw();
-  c1.Print("c24rb1.png");
+  c1.Print("Figures/c24rb1.png");
 
   //Rebinned seperate  c2{4} histogram
 
@@ -104,7 +104,7 @@ void tracks()
   c24x_rb2 -> Rebin(rebin);
   c24x_rb2 -> Scale(1.0/rebin);
   c24x_rb2 -> Draw();
-  c1.Print("c24rb2.png");
+  c1.Print("Figures/c24rb2.png");
 
   // --- now drawing the different rebinnings together
   c24x->SetMarkerStyle(kOpenCircle);
@@ -123,7 +123,7 @@ void tracks()
   c24x -> Draw("same ex0p");
   c24x_rb1 -> Draw("same ex0p");
   c24x_rb2 -> Draw("same ex0p");
-  c1.Print("c24_rebin_comparison.png");
+  c1.Print("Figures/c24_rebin_comparison.png");
 
 
   return;
