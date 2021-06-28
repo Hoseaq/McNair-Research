@@ -48,22 +48,24 @@ void tracks()
 
 
   // --- math operations for subevent cumulant ab|ab
+  // --- add the math formulas here as a comment so you can verify you've done this correctly
   c22abx -> Multiply(c22abx);
   c22ax -> Multiply(c22bx);
   c22ax -> Add(c22abx, -1);
   c24bx -> Add(c22ax, -1);
   c24bx -> Draw();
-  c1.Print("Figures/c24bx.png");
+  c1.Print("Figures/c24x_abab.png");
   //cn{4}ab|ab has been drawn
 
 
 
   // --- math operations for subevent cumulant aa|bb
-  //Creation of cn{4}aa|bb histogram
+  // --- add the math formulas here as a comment so you can verify you've done this correctly
+  // --- be sure not to reuse histograms from other calculations, make more clones as needed
   c22abx -> Scale(2);
   c24ax -> Add(c22abx, -1);
   c24ax -> Draw();
-  c1.Print("Figures/c24ax.png");
+  c1.Print("Figures/c24x_aabb.png");
   //cn{4}aa|bb histogram has been drawn
 
   //creation of single histogram
