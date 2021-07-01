@@ -7,12 +7,19 @@ void tracks()
   TFile* file = TFile::Open("quentin.root","read");
   //opens local root file
   TProfile* c22 = (TProfile*)file->Get("nfvtxt_ac_fvtxc_tracks_c22");
+  // <2> histogram.
   TProfile* c24 = (TProfile*)file->Get("nfvtxt_ac_fvtxc_tracks_c24");
+  // <4> histogram.
   TProfile* c22ab = (TProfile*)file->Get("nfvtxt_ac_fvtxsfvtxn_tracks_c22");
+  // <2>_{a|b} histogram
   TProfile* c24a = (TProfile*)file->Get("nfvtxt_ac_fvtxsfvtxn_tracks_c24a");
+  // <4>_{aa|bb} histogram
   TProfile* c24b = (TProfile*)file->Get("nfvtxt_ac_fvtxsfvtxn_tracks_c24b");
+  // <4>_{ab|ab} histogram
   TProfile* c22a = (TProfile*)file->Get("nfvtxt_ac_fvtxs_tracks_c22");
+  // <2>_{a|a} histogram
   TProfile* c22b = (TProfile*)file->Get("nfvtxt_ac_fvtxn_tracks_c22");
+  // <2>_{b|b} histogramc
 
   //Retrieves specific files from local root file
   //TH1D histograms contain 1 double per bin
@@ -84,7 +91,6 @@ void tracks()
   c24x -> Add(c22x,-1);
   c24x -> Draw();
   c1.Print("c24rb1.png");
-
   //Rebinned seperate  c2{4} histogram
 
   //Rebinning of histograms: merged
