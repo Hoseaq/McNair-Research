@@ -9,20 +9,20 @@ void tracks()
   TFile* file = TFile::Open("quentin.root","read");
 
   // --- get the TProfile histograms from the file
-  TProfile* c22 = (TProfile*)file->Get("nfvtxt_ac_fvtxc_tracks_c22");
   // <2> histogram.
-  TProfile* c24 = (TProfile*)file->Get("nfvtxt_ac_fvtxc_tracks_c24");
+  TProfile* c22 = (TProfile*)file->Get("nfvtxt_ac_fvtxc_tracks_c22");
   // <4> histogram.
-  TProfile* c22ab = (TProfile*)file->Get("nfvtxt_ac_fvtxsfvtxn_tracks_c22");
+  TProfile* c24 = (TProfile*)file->Get("nfvtxt_ac_fvtxc_tracks_c24");
   // <2>_{a|b} histogram
-  TProfile* c24a = (TProfile*)file->Get("nfvtxt_ac_fvtxsfvtxn_tracks_c24a");
+  TProfile* c22ab = (TProfile*)file->Get("nfvtxt_ac_fvtxsfvtxn_tracks_c22");
   // <4>_{aa|bb} histogram
-  TProfile* c24b = (TProfile*)file->Get("nfvtxt_ac_fvtxsfvtxn_tracks_c24b");
+  TProfile* c24a = (TProfile*)file->Get("nfvtxt_ac_fvtxsfvtxn_tracks_c24a");
   // <4>_{ab|ab} histogram
-  TProfile* c22a = (TProfile*)file->Get("nfvtxt_ac_fvtxs_tracks_c22");
+  TProfile* c24b = (TProfile*)file->Get("nfvtxt_ac_fvtxsfvtxn_tracks_c24b");
   // <2>_{a|a} histogram
-  TProfile* c22b = (TProfile*)file->Get("nfvtxt_ac_fvtxn_tracks_c22");
+  TProfile* c22a = (TProfile*)file->Get("nfvtxt_ac_fvtxs_tracks_c22");
   // <2>_{b|b} histogramc
+  TProfile* c22b = (TProfile*)file->Get("nfvtxt_ac_fvtxn_tracks_c22");
 
   // --- make TH1D histograms from the TProfiles to do mathematical operations on them
 
