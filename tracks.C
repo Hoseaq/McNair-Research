@@ -79,6 +79,16 @@ void tracks()
 
 
   THStack *hs = new THStack("hs", "");
+  c24x->SetMarkerStyle(kFullCircle);
+  c24ax->SetMarkerStyle(kFullCross);
+  c24bx->SetMarkerStyle(kFullDiamond);
+  c24x->SetMarkerColor(kBlack);
+  c24ax->SetMarkerColor(kBlue);
+  c24bx->SetMarkerColor(kRed);
+  c24bx->SetMarkerSize(1.8);
+  c24x->SetLineColor(kBlack);
+  c24ax->SetLineColor(kBlack);
+  c24bx->SetLineColor(kBlack);
   hs -> Add(c24ax);
   hs -> Add(c24bx);
   hs -> Add(c24x);
@@ -88,6 +98,11 @@ void tracks()
   hs->SetMaximum(1.0e-4);
   hs->SetMinimum(-1.0e-4);
   hs->GetXaxis()->SetRangeUser(0,50);
+  TLegend leg_hs(0.68,0.68,0.88,0.88);
+  leg_hs.AddEntry(c24x,"c_{2}{4}","p");
+  leg_hs.AddEntry(c24ax,"c_{2}{4}_{aa|bb}","p");
+  leg_hs.AddEntry(c24bx,"c_{2}{4}_{ab|ab}","p");
+  leg_hs.Draw();
   c1.Print("Figures/hs.png");
 
   //Rebinning of historgrams: seperate rebinning of <4> and <2> histograms
